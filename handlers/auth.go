@@ -25,8 +25,8 @@ func init() {
 // user registeration
 func Register(c *gin.Context) {
 	var req struct {
-		Phone    string `json:"phone"`
-		DeviceID string `json:"device_id"`
+		Phone string `json:"phone"`
+		Id    string `json:"device_id"`
 	}
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input"})
@@ -41,7 +41,7 @@ func Register(c *gin.Context) {
 		Phone:     req.Phone,
 		OTP:       otp,
 		ExpiresAt: time.Now().Add(5 * time.Minute), //expire in 5minutes
-		DeviceID:  req.DeviceID,
+		DeviceID:  req.Id,
 	}
 
 	_, err := usersCollection.InsertOne(context.TODO(), newUser)
