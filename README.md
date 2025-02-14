@@ -30,6 +30,8 @@ DEPLOYMENT STRATEGY
 1. Containerization with Docker
 Package the application into a Docker container for easy portability.
 Deploy it using Docker Compose to manage MongoDB.
+
+
 2️. Cloud Deployment Options
 AWS EC2 : Deploy the Go app on an EC2 instance and use MongoDB Atlas for managing database.
 Heroku: Use Heroku for deployment.
