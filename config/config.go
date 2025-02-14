@@ -28,6 +28,6 @@ func ConnectDB() {
 		log.Fatal("Could not connect to MongoDB")
 	}
 
-	fmt.Println("✅ Connected to MongoDB!")
+	fmt.Println("Connected to MongoDB!")
 	DB = client.Database("otpAuthDB")
 }
